@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Question5
 {
@@ -27,6 +28,22 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    
+    System.out.print("How many inputs would you like to call? (enter a number) -  ");
+    int x = in.nextInt();
+    List<Interger> intList = new ArrayList<Interger>();
+    for (int i = 0; i < x; i++){
+      System.out.print("");
+      int number = in.nextInt();
+      intList.add(number);
+    };
+
+    for (int i = 0; i < intList.size(); i++){
+      for (int k = i+1; k < intList.size(); k++ ){
+        if (intList.get(i).equals(intList.get(k))){
+          x--;
+        }
+      }
+    }
+    System.out.println(x);
   }
 }
